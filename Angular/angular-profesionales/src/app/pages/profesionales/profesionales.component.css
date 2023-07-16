@@ -1,0 +1,20 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+    gap: 100px
+}
+
+.box{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
