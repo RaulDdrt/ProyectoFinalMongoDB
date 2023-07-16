@@ -1,0 +1,29 @@
+header{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid black;
+    color: white;
+    background-color: black;
+    width: 100%;
+    height: 81px;
+}
+
+header nav{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav a{
+    color: var(--othercolor);
+    text-decoration: none;
+}
+
+.header1{
+
+    color: var(--othercolor);
+    text-decoration: none;
+}
