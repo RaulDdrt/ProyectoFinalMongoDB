@@ -2,7 +2,8 @@ const mongoose = require("mongoose")
 
 
 const profSchema = new mongoose.Schema({
-    name: String,
+    firstName: String,
+    lastName: String,
     age: Number,
     weight: Number,
     height: Number,
