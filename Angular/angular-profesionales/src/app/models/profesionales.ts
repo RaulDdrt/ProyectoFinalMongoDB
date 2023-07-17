@@ -7,20 +7,9 @@ export class Profesionales {
     public height: Number;
     public isRetired: Boolean;
     public nacionality: String;
-    public oscarNumber: Number;
+    public oscarsNumber: Number;
     public profession: String;
 
-    constructor(firstName:string,lastName:String, age:Number, weight:Number, height:Number, isRetired:boolean, nacionality:String, oscarNumber:Number, profession:String){
-
-        this.firstName = firstName
-        this.lastName = lastName
-        this.age = age
-        this.weight = weight
-        this.height = height
-        this.isRetired = isRetired
-        this.nacionality = nacionality
-        this.oscarNumber = oscarNumber
-        this.profession = profession
-    }
+    constructor(firstName:string,lastName:String, age:Number, weight:Number, height:Number, isRetired:boolean, nacionality:String, oscarsNumber:Number, profession:String){}
 
 }

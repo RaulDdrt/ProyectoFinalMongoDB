@@ -63,7 +63,7 @@ function addProf(req, res){
 }
 
 function editProf(req, res){
-    profSchema.findOneAndUpdate({firstName: req.query.firstName , lastName: req.query.lastName}, req.body, {new: true})
+    profSchema.findOneAndUpdate(req.body)
     .then((prof) =>{
         console.log(prof)
         res.send(prof)

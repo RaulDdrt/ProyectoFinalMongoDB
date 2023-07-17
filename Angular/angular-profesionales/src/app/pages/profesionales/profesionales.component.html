@@ -1,55 +1,56 @@
 <body>
 
-    <form class="box" action="">
+    <form class="box" [formGroup]="formulario" ngNoForm>
 
         <div class="input-group input-group-sm mb-3">
             <span class="input-group-text" id="inputGroup-sizing-sm">firstName</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" formControlName="firstName">
         </div>
         <div class="input-group input-group-sm mb-3">
             <span class="input-group-text" id="inputGroup-sizing-sm">lastName</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" formControlName="lastName">
         </div>
         <div class="input-group input-group-sm mb-3">
             <span class="input-group-text" id="inputGroup-sizing-sm">age</span>
-            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" formControlName="age">
         </div>
         <div class="input-group input-group-sm mb-3">
             <span class="input-group-text" id="inputGroup-sizing-sm">weight</span>
-            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" formControlName="weight">
         </div>
         <div class="input-group input-group-sm mb-3">
             <span class="input-group-text" id="inputGroup-sizing-sm">height</span>
-            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"formControlName="height">
         </div>
         <div class="input-group input-group-sm mb-3">
             <span class="input-group-text" id="inputGroup-sizing-sm">isRetired</span>
-            <input type="boolean" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="boolean" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" formControlName="isRetired">
         </div>
         <div class="input-group input-group-sm mb-3">
             <span class="input-group-text" id="inputGroup-sizing-sm">nacionality</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" formControlName="nacionality">
         </div>
         <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-sm">oscarsNumbers</span>
-            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <span class="input-group-text" id="inputGroup-sizing-sm">oscarsNumber</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" formControlName="oscarsNumber">
         </div>
         <div class="input-group input-group-sm mb-3">
             <span class="input-group-text" id="inputGroup-sizing-sm">profession</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" formControlName="profession">
         </div>
 
         <div class="buttons">
-        <button type="button" class="btn btn-secondary">Mostrar</button>
-        <button type="button" class="btn btn-secondary">Crear</button>
-        <button type="button" class="btn btn-secondary">Actualizar</button>
-        <button type="button" class="btn btn-secondary">Eliminar</button>
+        <button type="submit" (click)="getProfs()" class="btn btn-secondary">Mostrar</button>
+        <button type="button" (click)="postProf()"class="btn btn-secondary">Crear</button>
+        <button type="button" (click)="editP()" class="btn btn-secondary">Actualizar</button>
+        <button type="button" (click)="deleteThis()" class="btn btn-secondary">Eliminar</button>
         </div>
 
     </form>
 
-    <div class="box">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed in voluptas fugit nisi officiis ea maxime voluptatum nostrum alias. Eius voluptas dolor error vel hic nemo ipsa repudiandae autem aut?
+    <div class="box" *ngIf="profesionales">
+        <p *ngFor="let profesional of profesionales | keyvalue">{{ profesional.key }}: {{ profesional.value | json }}</p>
     </div>
+      
 
 </body>

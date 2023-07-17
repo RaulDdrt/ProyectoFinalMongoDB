@@ -6,6 +6,9 @@ import { HeaderComponent } from './component/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfesionalesComponent } from './pages/profesionales/profesionales.component';
 import {HttpClientModule} from "@angular/common/http"
+import { Profesionales } from './models/profesionales';
+import { ProfesionalesService } from './shared/profesionales.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,14 +16,17 @@ import {HttpClientModule} from "@angular/common/http"
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    ProfesionalesComponent
+    ProfesionalesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    
   ],
-  providers: [],
+  providers: [ProfesionalesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

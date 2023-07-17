@@ -9,19 +9,33 @@ import { Profesionales } from '../models/profesionales';
 })
 export class ProfesionalesService {
 
-    private url = "http.//localhost:3000/"
-    public profesionales : Profesionales
+
+  private url:string = "http://localhost:3000/profesionales"
+  
+  
 
   constructor(private http: HttpClient) { }
 
-  getProf(){
-    this.http.get(this.url).subscribe(
-      data=>{
-        console.log(data)
-      },
-      error =>{
-        console.log(error)
-      }
-    )
+  getAll(): Observable<Profesionales[]> {
+    return this.http.get<Profesionales[]>(this.url);
   }
+
+  getName(firstName: string, lastName: string):Observable<Profesionales[]>{
+    return this.http.get<Profesionales[]>(`${this.url}?firstName=${firstName}&lastName=${lastName}`);
+  }
+
+  postProf(profesionales: Profesionales):Observable<Profesionales[]> {
+    return this.http.post<Profesionales[]>(this.url, profesionales);
+  }
+
+  editProf(profesionales: Profesionales):Observable<Profesionales[]> {
+    return this.http.put<Profesionales[]>(this.url, profesionales);
+  }
+
+  deleteName(firstName: string, lastName: string):Observable<Profesionales[]>{
+    return this.http.delete<Profesionales[]>(`${this.url}?firstName=${firstName}&lastName=${lastName}`);
+  }
+
+
+
 }
